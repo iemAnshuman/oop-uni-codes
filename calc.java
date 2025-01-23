@@ -2,7 +2,6 @@ class Calc{
   public static void main(String[] args){
     System.out.println("Values are: " + args[0] + args[1] + args[2]);
     System.out.println("Performing operation: " + args[1]);
-    try{
       double ans;
       double a = Double.parseDouble(args[0]);
       double b = Double.parseDouble(args[2]);
@@ -23,11 +22,6 @@ class Calc{
         return;
       }
       System.out.println("Answer is " + ans);
-    }
-    catch (IllegalArgumentException e){
-      System.err.println("Error" + e.getMessage());
-      System.err.println("Enter 3 arguments.");
-    }
     return;
   }
 }
