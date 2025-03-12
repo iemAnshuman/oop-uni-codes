@@ -1,30 +1,32 @@
-class Days{
-  public static void main(String[] args){
-    int a = Integer.parseInt(args[0]);
-    int b = Integer.parseInt(args[1]);
-    int c = Integer.parseInt(args[2]);
-
-    int day = a-1;
-    if((b % 2 != 0 && b < 8) || (b >= 8 && b%2 == 0)){
-      // Jan, Mar, May, July, aug, oct, dec
-      day += 31;
+class Days {
+    public static void main(String[] args) {
+        int day = Integer.parseInt(args[0]);
+        int month = Integer.parseInt(args[1]);
+        int year = Integer.parseInt(args[2]);
+        
+        int[] monthDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        
+        int totalDays = day - 1;
+        
+        for (int i = 0; i < month - 1; i++) {
+            totalDays += monthDays[i];
+        }
+        
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+            if (month > 2) {
+                totalDays++;
+            }
+        }
+        
+        int yearsSince1970 = year - 1970;
+        totalDays += yearsSince1970 * 365;
+        
+        for (int i = 1970; i < year; i++) {
+            if ((i % 4 == 0 && i % 100 != 0) || (i % 400 == 0)) {
+                totalDays++;
+            }
+        }
+        
+        System.out.println(totalDays + " days");
     }
-    else if(b == 2){
-      day += 28;
-    }
-    else{
-      day += 30;
-    }
-
-    // leap year
-    int k = c%4;
-    int years = c-1970;
-    years += 4-k;
-    int leaps = years/4;
-
-    day = day + 365*years + leaps;
-
-    System.out.println(day + " days");
-    return;
-  }
 }

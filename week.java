@@ -24,8 +24,6 @@ class Week{
         case 7:
           System.out.println("Sun");
           break;
-        default:
-          System.out.println("Error");
       }
     }
     else{
