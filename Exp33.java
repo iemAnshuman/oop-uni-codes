@@ -18,8 +18,8 @@ class Exp33{
       for(int i=0; i<n-2; i++){
         int f = f1 + f2;
         System.out.println(f);
-        f2 = f1;
-        f1 = f;
+        f1 = f2;
+        f2 = f;
       }
     }
   }

@@ -1,16 +1,25 @@
-class Course{
-  String name;
-  int code;
+public class Exp45 {
+    String courseName;
+    String courseCode;
 
-  Course(String name, int code){
-    this.name = name;
-    this.code = code;
-  }
-}
+    public Exp45(String courseName, String courseCode) {
+        this.courseName = courseName;
+        this.courseCode = courseCode;
+    }
 
-public class Exp45{
-  public static void main(String[] args){
-    Course some = new Course("OOP", 123);
-    System.out.println(some.name + " " + some.code);
-  }
+    public void displayCourseDetails() {
+        System.out.println("Course Name: " + courseName);
+        System.out.println("Course Code: " + courseCode);
+    }
+
+    public static void main(String[] args) {
+        Exp45 course1 = new Exp45("Data Structures", "CS101");
+        Exp45 course2 = new Exp45("Machine Learning", "ML202");
+
+        System.out.println("Course 1 Details:");
+        course1.displayCourseDetails();
+
+        System.out.println("\nCourse 2 Details:");
+        course2.displayCourseDetails();
+    }
 }
